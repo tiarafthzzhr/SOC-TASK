@@ -447,6 +447,16 @@ for lvl, count in sorted(levels.items()):
 
 ---
 
+## 📸 Screenshots
+
+### Wazuh Dashboard
+![Wazuh Dashboard](WAZUHDASHBOARD.jpeg)
+
+### Shuffler.io Workflow
+![Shuffler Workflow](WORKFLOW-SHUFFLER.jpeg)
+
+---
+
 ## ✅ Checklist Pencapaian
 
 | Requirement | Status |
