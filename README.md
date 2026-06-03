@@ -321,7 +321,7 @@ sudo iptables -L INPUT -n  # verifikasi bersih
 **Step 2 — Monitor di Manager:**
 ```bash
 ssh azureuser@20.205.16.230
-sudo tail -f /var/ossec/logs/active-responses.log
+sudo tail -f /var/ossec/logs/alerts/alerts.json | grep -i "100200\|ddos\|firewall-drop\|10.0.0.5"
 ```
 
 **Step 3 — Monitor nginx di Agent-02:**
@@ -373,6 +373,14 @@ Security Events → Add filter → data.srcip: 10.0.0.5
 | Call mitigation api 5 | ✅ 200 OK | Mitigation executed |
 | Record wazuh action 6 | ✅ 200 OK | Action recorded |
 | Notify dashboard 7 | ✅ 200 OK | Notification sent |
+
+**Tampilan Shuffler.io Workflow:**
+
+![Shuffler Workflow](WORKFLOW-SHUFFLER.jpeg)
+
+**Tampilan Wazuh Dashboard (Security Events):**
+
+![Wazuh Dashboard](WAZUHDASHBOARD.jpeg)
 
 ---
 
@@ -444,16 +452,6 @@ for lvl, count in sorted(levels.items()):
 | Level 10 | 690 | Critical |
 | Level 12 | 3,309 | DDoS CRITICAL ✅ |
 | Level 1&2 | 0 | Filter aktif ✅ |
-
----
-
-## 📸 Screenshots
-
-### Wazuh Dashboard
-![Wazuh Dashboard](WAZUHDASHBOARD.jpeg)
-
-### Shuffler.io Workflow
-![Shuffler Workflow](WORKFLOW-SHUFFLER.jpeg)
 
 ---
 
