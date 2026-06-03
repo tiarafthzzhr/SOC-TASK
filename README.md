@@ -324,6 +324,8 @@ ssh azureuser@20.205.16.230
 sudo tail -f /var/ossec/logs/alerts/alerts.json | grep -i "100200\|ddos\|firewall-drop\|10.0.0.5"
 ```
 
+![Wazuh Manager Monitor](WAZUHMANAGER-MONITOR.jpeg)
+
 **Step 3 — Monitor nginx di Agent-02:**
 ```bash
 ssh azureuser@20.2.82.117
@@ -336,11 +338,15 @@ ssh azureuser@57.158.24.143
 ab -n 10000 -c 100 http://10.0.0.6/
 ```
 
+![Agent-1 Attacker](agent1-attacker.jpeg)
+
 **Step 5 — Lihat hasil di Shuffler:**
 ```
 Browser → https://shuffler.io
 Workflow → SOAR-DDoS-Mitigation-Wazuh → Debug
 ```
+
+![Workflow Run Debugger](Workflow%20Run%20Debugger.jpeg)
 
 **Step 6 — Lihat Dashboard Wazuh:**
 ```
